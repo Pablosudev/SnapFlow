@@ -1,0 +1,20 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(202, 211, 249, 1);
+}
+.navBar__title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 1rem;
+}
+
+.navBar__link{
+    margin-top: 1.7rem;
+}
+.navBar__page{
+    margin-right: 1rem;
+    margin-top: 1rem;
+}

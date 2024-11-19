@@ -1,0 +1,33 @@
+.footer{
+    display: flex;
+    background-color: rgba(202, 211, 249, 1);
+    position: relative;
+}
+.footer__title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    margin-left: 1rem;
+}
+.footer__linkedin{
+    position: absolute;
+    right: 23%;
+    bottom: 27%;
+    height: 30px;
+    width: 30px;
+}
+.footer__instagram{
+    position: absolute;
+    right: 13%;
+    bottom: 30%;
+    height: 27px;
+    width: 27px;
+}
+.footer__x{
+    position: absolute;
+    right: 3%;
+    bottom: 30%;
+    height: 27px;
+    width: 27px;
+}
