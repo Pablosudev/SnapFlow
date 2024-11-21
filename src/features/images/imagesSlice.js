@@ -9,8 +9,8 @@ export const ImagesSlice = createSlice({
         error: null
     },
    extraReducers: (builder) => {
-        builder.addCase(imagesThunk.fullfilled((state,action) =>{
-            state.status = "fullfilled"
+        builder.addCase(imagesThunk.fulfilled((state,action) =>{
+            state.status = "fulfilled"
             state.data = action.payload
         })).addCase(imagesThunk.pending, (state,action) => {
             state.status="pending"
