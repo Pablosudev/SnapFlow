@@ -1,0 +1,11 @@
+.images{
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color:rgba(115, 165, 173, 1);
+}.images__random{
+    margin-bottom: 1rem;
+}
