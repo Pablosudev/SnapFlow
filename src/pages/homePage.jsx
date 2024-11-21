@@ -7,7 +7,7 @@ import { ImagesComponent } from "../components/imgComponentes/imagesComponent"
 
 
 
-export const HomePage = (props) => {
+export const HomePage = () => {
 
    const [data,setData] = useState([])
    const dispatch = useDispatch()
@@ -22,13 +22,14 @@ export const HomePage = (props) => {
 
 
     useEffect(() => {
-
+         console.log(imagesStatus)
          if(imagesStatus === "idle" ){
             dispatch(imagesThunk())
          }
          else if (imagesStatus === "fulfilled"){
             setData(imagesData)
             setIsLoading(false)
+            console.log(imagesData)
          }
          else if (imagesStatus === "rejected"){
             setIsLoading(false)
@@ -36,10 +37,10 @@ export const HomePage = (props) => {
          }
 
 
-    },[imagesData,imagesStatus,dispatch,props])
+    },[imagesData,imagesStatus,dispatch])
 
    
-       
+       console.log(data)
     return <>
      <ImagesComponent data={data} type="images"/>
     </>

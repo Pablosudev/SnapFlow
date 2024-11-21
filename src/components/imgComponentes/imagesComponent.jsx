@@ -9,11 +9,13 @@ export const ImagesComponent = (props) => {
         
         {props.data.map((images,index) =>
             props.type === "images" ? <>
-            <p>{images.title}</p>
-            <img src={images.urls}/>
+            
+            {images.map((images) => <img src={images.urls.small}/>)}
+            
             </> : <>
             </>
         )
+        
     }
     
     </>
