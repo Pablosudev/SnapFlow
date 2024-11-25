@@ -1,0 +1,41 @@
+
+
+
+.images{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+}
+
+.images__random{
+    border-radius: 6%;
+    
+}
+
+.buttonsImages{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 8%;
+    
+}
+.likeButton{
+    background-color:rgba(115, 165, 173, 1);
+    border-radius: 15%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border:transparent;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+.favButton{
+    background-color:rgba(115, 165, 173, 1);
+    border-radius: 15%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: transparent;
+    
+}

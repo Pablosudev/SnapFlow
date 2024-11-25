@@ -4,17 +4,20 @@
     background-color: rgba(202, 211, 249, 1);
 }
 .navBar__title{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Inter";
     color: white;
     font-size: 1.5rem;
-    font-weight: 100;
     margin-left: 1rem;
+    
 }
 
 .navBar__link{
     margin-top: 1.7rem;
 }
-.navBar__page{
+.navBar__home{
     margin-right: 1rem;
     margin-top: 1rem;
+}
+.navBar__fav{
+    margin-right: 0.5rem;
 }

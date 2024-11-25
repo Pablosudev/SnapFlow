@@ -14,8 +14,8 @@ export const Layout = () => {
         <nav className="navBar">
             <h1 className="navBar__title">SNAPFLOW</h1>
             <ul className="navBar__link">
-               <NavLink className="navBar__page">HOME</NavLink>
-               <NavLink className="navBar__page">MY PHOTOS</NavLink>
+               <NavLink className="navBar__home">HOME</NavLink>
+               <NavLink className="navBar__fav">MY PHOTOS</NavLink>
             </ul>
         </nav>   
         <header>

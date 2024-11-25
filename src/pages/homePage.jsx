@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
-import "./Images.css"
 import { useDispatch, useSelector } from "react-redux"
 import { getImagesData, getImagesStatus } from "../features/images/imagesSlice"
 import { imagesThunk } from "../features/images/imagesThunk"
 import { ImagesComponent } from "../components/imgComponentes/imagesComponent"
+import "./Images.css"
+
+
 
 
 
@@ -12,24 +14,21 @@ export const HomePage = () => {
    const [data,setData] = useState([])
    const dispatch = useDispatch()
    const [isLoading,setIsLoading] = useState(true)
+   
 
    const imagesData = useSelector(getImagesData)
    const imagesStatus = useSelector(getImagesStatus)
    
-
    
 
-
-
     useEffect(() => {
-         console.log(imagesStatus)
          if(imagesStatus === "idle" ){
             dispatch(imagesThunk())
          }
          else if (imagesStatus === "fulfilled"){
             setData(imagesData)
             setIsLoading(false)
-            console.log(imagesData)
+            
          }
          else if (imagesStatus === "rejected"){
             setIsLoading(false)
@@ -39,9 +38,9 @@ export const HomePage = () => {
 
     },[imagesData,imagesStatus,dispatch])
 
-   
-       console.log(data)
     return <>
-     <ImagesComponent data={data} type="images"/>
+    <div className="images">
+    <ImagesComponent data={data} type="images"/>
+    </div>
     </>
 }
