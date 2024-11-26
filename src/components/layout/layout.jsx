@@ -14,11 +14,11 @@ export const Layout = () => {
         <nav className="navBar">
             <h1 className="navBar__title">SNAPFLOW</h1>
             <ul className="navBar__link">
-               <NavLink className="navBar__home">HOME</NavLink>
-               <NavLink className="navBar__fav">MY PHOTOS</NavLink>
+               <NavLink to="/" className="navBar__home">HOME</NavLink>
+               <NavLink to="/fav" className="navBar__fav">MY PHOTOS</NavLink>
             </ul>
         </nav>   
-        <header>
+        <header className="header">
             <img className="header__image" src="/img/pexels-photo-1655166.jpeg" alt="Mar_foto" />
             <h2 className="header__title">WELCOME TO YOUR <br /> IMAGE COLLECTION</h2>
             <p className="header__text">Explore, save, and organize your favorite <br/> images all in one place</p>

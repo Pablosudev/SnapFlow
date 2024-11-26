@@ -8,7 +8,6 @@ import "./Images.css"
 
 
 
-
 export const HomePage = () => {
 
    const [data,setData] = useState([])
