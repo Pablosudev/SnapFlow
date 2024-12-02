@@ -3,8 +3,8 @@ import { ImagesComponent } from "../components/imgComponentes/imagesComponent"
 export const FavPage = () => {
 
     const photosFav = localStorage.getItem("fav")
-    const data = JSON.parse(photosFav)
-    console.log(data)
+    const imagesFav = JSON.parse(photosFav)
+    console.log(imagesFav)
     return <>
     <ImagesComponent data={data} type="images"/>
     </>

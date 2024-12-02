@@ -5,17 +5,18 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 
 
 
-export const ImagesComponent = (props) => {
+export const ImagesComponent = (images) => {
 
 
-  const handleFavorite = (img) => {
+  const handleFavorite = (image) => {
     const photosFav = localStorage.getItem("fav")
     if (photosFav ===null){
-      localStorage.setItem("fav",JSON.stringify([{urls: img.urls}]))
+      localStorage.setItem("fav",JSON.stringify([{urls: image.urls}]))
+      
     }
     else{
       const currentFav = JSON.parse(photosFav)
-      currentFav.push({urls: img.urls})
+      currentFav.push({urls: image.urls})
       localStorage.setItem("fav",JSON.stringify(currentFav))
     }
   }
@@ -31,30 +32,20 @@ export const ImagesComponent = (props) => {
       localStorage.setItem("like",JSON.stringify(currentLike))
     }
   }
-
-  
-
-    return (
-      <>
-        {props.data.map((images, index) => (
-          props.type === "images" ? (
-            <div key={index}>
-              {images.map((image, imageIndex) => (
-                <div key={imageIndex} className="images">
+  console.log(images)
+    return <>
+    <>
+        {images.data.map((image, index) => {
+            return <div key={index} className="images">
+                    <img src={image.urls.small} className="images__random"/>
                     <div className="buttonsImages">
-                    <button onClick={() => handleLike(imageIndex)} className="likeButton"><MdFavoriteBorder /></button>
-                    <button onClick={() => handleFavorite(imageIndex)} className="favButton"><IoIosAddCircleOutline /></button>
-                    </div>
-                  <img src={image.urls.small} className="images__random"/>
-                  
-                </div>
-              ))}
-            </div>
-            ) : (
-            <></> 
-            )
-        ))}
-      </>
-    );
-  };
+                    <button onClick={() => handleLike(image)} className="likeButton"><MdFavoriteBorder /></button>
+                    <button onClick={() => handleFavorite(image)} className="favButton"><IoIosAddCircleOutline /></button>
+                  </div>
+              </div>
+        })}
+        </>
+    </>
+      
+}
     
