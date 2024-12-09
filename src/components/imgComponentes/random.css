@@ -39,3 +39,13 @@
     border: transparent;
     
 }
+.buttonFavs{
+    background-color:rgba(115, 165, 173, 1);
+    border-radius: 15%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border:transparent;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
