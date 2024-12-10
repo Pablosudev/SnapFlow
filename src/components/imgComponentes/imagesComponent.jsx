@@ -9,22 +9,29 @@ export const ImagesComponent = (images) => {
 
 
   const handleFavorite = (image) => {
+
+   const id = new Date().getTime()
+
     const photosFav = localStorage.getItem("fav")
+    const imagesFav = photosFav? JSON.parse(photosFav) : [];
+    const newImage = {id, urls: image.urls};
+
+    
     if (photosFav ===null){
-      localStorage.setItem("fav",JSON.stringify([{urls: image.urls}]))
+      localStorage.setItem("fav",JSON.stringify([newImage]))
       
     }
     else{
-      const currentFav = JSON.parse(photosFav)
-      currentFav.push({urls: image.urls})
-      localStorage.setItem("fav",JSON.stringify(currentFav))
+      imagesFav.push(newImage)
+      localStorage.setItem("fav",JSON.stringify(imagesFav))
     }
   }
 
-  const  handleLike = (image) => {
+  const handleLike = (image) => {
+    
     const photosLike = localStorage.getItem("like")
-    if (photosLike === null){
-      localStorage.setItem("like",JSON.stringify({urls: image.urls}))
+    if(photosLike === null){
+      localStorage.setItem("like",JSON.stringify([{urls: image.urls}]))
     }
     else{
       const currentLike = JSON.parse(photosLike)
@@ -32,7 +39,7 @@ export const ImagesComponent = (images) => {
       localStorage.setItem("like",JSON.stringify(currentLike))
     }
   }
-  console.log(images)
+  
     return <>
     <>
         {images.data.map((image, index) => {
