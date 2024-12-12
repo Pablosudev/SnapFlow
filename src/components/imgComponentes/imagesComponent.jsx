@@ -10,11 +10,11 @@ export const ImagesComponent = (images) => {
 
   const handleFavorite = (image) => {
 
-   const id = new Date().getTime()
-
+    const id = new Date().getTime()
     const photosFav = localStorage.getItem("fav")
     const imagesFav = photosFav? JSON.parse(photosFav) : [];
     const newImage = {id, urls: image.urls};
+    
 
     
     if (photosFav ===null){

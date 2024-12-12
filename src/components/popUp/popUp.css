@@ -1,0 +1,17 @@
+.popUp{
+    background-color: rgba(111, 124, 167, 0.83);
+    border-color: black;
+    border-radius: 10%;
+    max-width: 90%;
+    align-content: center;
+    position: relative;
+}
+.popUp_title{
+    font-family: "Inter";
+    color: white;
+}
+.popUp_close{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+}
