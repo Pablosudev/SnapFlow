@@ -2,13 +2,23 @@
     background-color: rgba(111, 124, 167, 0.83);
     border-color: black;
     border-radius: 10%;
-    max-width: 90%;
-    align-content: center;
-    position: relative;
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 5%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+
+
+    
 }
 .popUp_title{
     font-family: "Inter";
     color: white;
+    font-size: 1.5rem;
 }
 .popUp_close{
     position: absolute;

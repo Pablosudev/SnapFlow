@@ -12,28 +12,33 @@ export const FavPage = () => {
     const imagesFav = JSON.parse(photosFav)
 
     const[popUp, setPopUp] = useState(false);
-    const openPopUp = () => {
+    const[selectedImage, setSelectedImage] = useState(null);
+
+    const openPopUp = (image) => {
         setPopUp(true)
-    }
+        setSelectedImage(image);
+    };
+
     const closePopUp = () => {
-        setPopUp(false)
-    }
+        setPopUp(false);
+        setSelectedImage(null);
+    };
     
    
-const handleDelete = (image) => {
-    
-    const photosFav = localStorage.getItem("fav");
-    const imagesFav = photosFav ? JSON.parse(photosFav) : [];
-    const updatedImages = imagesFav.filter((img) => img.id !== image.id);
-    localStorage.setItem("fav", JSON.stringify(updatedImages))
-    window.location.reload(); 
-  };
+    const handleDelete = (image) => {
+        
+        const photosFav = localStorage.getItem("fav");
+        const imagesFav = photosFav ? JSON.parse(photosFav) : [];
+        const updatedImages = imagesFav.filter((img) => img.id !== image.id);
+        localStorage.setItem("fav", JSON.stringify(updatedImages))
+        window.location.reload(); 
+    };
 
   
     
 
     return <>
-
+   
     {imagesFav.map((images,index) => {
     return <div key={index} className="images">
         <img src={images.urls.small} className="images__random"/>
@@ -45,6 +50,6 @@ const handleDelete = (image) => {
         
     </div>
 })}
-    <PopUp open = {popUp} close = {closePopUp}/>
+    <PopUp open = {popUp} close = {closePopUp} />
     </>
 }
