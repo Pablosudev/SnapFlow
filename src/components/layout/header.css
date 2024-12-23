@@ -1,4 +1,7 @@
 
+.header{
+    height: 15.6rem;
+}
 .header__image{
     position: relative;
     width: 100%;
@@ -19,16 +22,13 @@
     position: absolute;
     top: 21%;
     left: 20%;
-
 }
 .header__search{
-    
     position: absolute;
     left: 27%;
     top: 29%;
     border-radius: 2.5rem;
     border-color: transparent;
-    
 }
 .header__button{
     position: absolute;
@@ -39,3 +39,36 @@
     padding-right: 0.15rem;
     border-color: transparent;
 }
+
+
+@media screen and (min-width: 1000px){
+
+    .header{
+        height: 60rem;
+    }
+    .header__title{
+        top: 30%;
+        left: 38%;
+        font-size: 3rem;
+    }
+    .header__search{
+        top : 80%;
+        left: 36%;
+        padding-left: 2rem;
+        padding-right: 18rem;
+        padding-bottom: 0.8rem;
+        padding-top: 0.8rem;
+    }
+    .header__button{
+        top: 79.9%;
+        right: 35%;
+        padding: 0.7rem;
+    }
+    .header__text{
+        top:50%;
+        left: 34%;
+        font-size: 2rem;
+
+    }
+}
+

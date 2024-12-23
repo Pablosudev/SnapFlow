@@ -1,12 +1,13 @@
 import { RiDownload2Line } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import "./favorites.css"
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getImagesFavData, getImagesFavStatus } from "../features/favSlice";
 import PopUpButton from "../components/buttons/popUpButton";
 import PopUp from "../components/popUp/popUpComponent";
 import { searchFavThunk } from "../features/images/favThunk";
+
+
 
 
 
@@ -75,7 +76,7 @@ export const FavPage = () => {
 
   
    return (
-    <>
+    <div className="imagesBody">
         {imagesFav.map((images, index) => (
                 <div key={index} className="images">
                     <img src={images.urls.small} className="images__random" alt={images.alt_description} />
@@ -91,6 +92,6 @@ export const FavPage = () => {
                 </div>
         )) }
         <PopUp open={popUp} close={closePopUp} />
-    </>
+    </div>
 );
 };

@@ -33,6 +33,7 @@ export const Layout = () => {
     
 
     return <>
+        <div className="page">
         <nav className="navBar">
             <h1 className="navBar__title">SNAPFLOW</h1>
             <ul className="navBar__link">
@@ -56,12 +57,13 @@ export const Layout = () => {
             <button  className="header__button"><CiSearch/></button>
             </form>
         </header>
-        <Outlet searchTerm={searchTerm}/> 
+        <Outlet/> 
         <footer className="footer">
             <h1 className="footer__title">SNAPFLOW</h1>
             <CiLinkedin className="footer__linkedin"/>
             <FaInstagram className="footer__instagram"/>
             <FaXTwitter className="footer__x"/>
         </footer>
+        </div>
     </>
 }

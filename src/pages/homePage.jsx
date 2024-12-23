@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getImagesData, getImagesStatus } from "../features/images/imagesSlice"
 import { imagesThunk } from "../features/images/imagesThunk"
 import { ImagesComponent } from "../components/imgComponentes/imagesComponent"
-import "./Images.css"
+
 
 
 
@@ -38,7 +38,7 @@ export const HomePage = () => {
     },[imagesData,imagesStatus,dispatch])
 
     return <>
-    <div className="images">
+    <div >
     <ImagesComponent data={data} type="images"/>
     </div>
     </>

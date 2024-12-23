@@ -17,7 +17,27 @@
 .navBar__home{
     margin-right: 1rem;
     margin-top: 1rem;
+    color: white;
+    font-family: "Inter";
 }
 .navBar__fav{
     margin-right: 0.5rem;
+    color: white;
+    font-family: "Inter";
+}
+
+@media screen and (min-width: 1000px){
+
+
+.navBar__fav{
+    margin-right: 3rem;
+    color: white;
+    font-family: "Inter";
+}
+.navBar__home{
+    margin-right: 2rem;
+    color: white;
+    font-family: "Inter";
+}
+
 }

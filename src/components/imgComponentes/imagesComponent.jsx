@@ -47,17 +47,22 @@ export const ImagesComponent = (images) => {
   }
   
     return <>
-    <>
+    <div className="imagesBody">
         {images.data.map((image, index) => {
-            return <div key={index} className="images">
+         
+            return <div key={index}>
+              <div className="images">
                     <img src={image.urls.small} className="images__random"/>
                     <div className="buttonsImages">
                     <button onClick={() => handleLike(image)} className="likeButton"><MdFavoriteBorder /></button>
                     <button onClick={() => handleFavorite(image)} className="favButton"><IoIosAddCircleOutline /></button>
                   </div>
               </div>
+            </div>
+        
         })}
-        </>
+      </div>
+        
     </>
       
 }
