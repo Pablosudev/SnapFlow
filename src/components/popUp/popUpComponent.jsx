@@ -1,34 +1,41 @@
-import { useState } from "react";
-import "./popUp.css"
+import { useState, useEffect } from "react";
+import "./popUp.css";
 
-
-const PopUp = ({ open, close, saveLabel }) => {
+const PopUp = ({ open, close, saveLabel, imageUrl, currentLabel, imageId }) => {
+    const [label, setLabel] = useState(currentLabel || "");
+    useEffect(() => {
+        
+        setLabel(currentLabel || "");
+    }, [currentLabel]);
 
     const handleSave = () => {
-        saveLabel(label);
-        setLabel("")
         
-    }
+        saveLabel(label, imageId);
+        setLabel(""); 
+        close(); 
+    };
 
-    
-if (!open) return null;
+    const handleLabelChange = (event) => {
+        setLabel(event.target.value);
+    };
 
-const [label,setLabel]= useState("");
+    if (!open) return null;
 
-const handleLabelChange = (event) => {
-    setLabel(event.target.value);
-}
-
-
-return (
-    <div className="popUp">
-        <h2 className="popUp_title">Personalize your <br /> favorite image whit <br /> a description.</h2>
-        <input type="text" value = {label} onChange = {handleLabelChange} />
-        <button onClick={handleSave}>SAVE</button>
-        <button onClick={close} className="popUp_close">X</button>
-    </div>
-   
-)
-}
+    return (
+        <div className="popUp">
+            <h2 className="popUp__title">Personalize your <br /> favorite image with <br /> a description.</h2>
+            <img src={imageUrl} alt="Selected favorite" className="popUp__image" />
+            <input
+                className="popUp__input"
+                type="text"
+                value={label}
+                onChange={handleLabelChange}
+                placeholder ="Add a description" 
+            />
+            <button onClick={handleSave} className="popUp__save">SAVE</button>
+            <button onClick={close} className="popUp__close">X</button>
+        </div>
+    );
+};
 
 export default PopUp;
