@@ -19,12 +19,10 @@ export const ImagesSlice = createSlice({
             state.data = action.payload
         }).addCase(searchImagesThunk.pending, (state) => {
             state.status = "pending";
-        })
-        .addCase(searchImagesThunk.rejected, (state, action) => {
+        }).addCase(searchImagesThunk.rejected, (state, action) => {
             state.status = "rejected";
             state.error = action.error.message;
-        })
-        .addCase(searchImagesThunk.fulfilled, (state, action) => {
+        }).addCase(searchImagesThunk.fulfilled, (state, action) => {
             state.status = "fulfilled";
             state.data = action.payload;
         });

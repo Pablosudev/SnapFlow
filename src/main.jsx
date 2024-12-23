@@ -9,6 +9,7 @@ import { FavPage } from './pages/favPage.jsx'
 
 
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>

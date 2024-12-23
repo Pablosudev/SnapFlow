@@ -13,7 +13,12 @@ export const ImagesComponent = (images) => {
     const id = new Date().getTime()
     const photosFav = localStorage.getItem("fav")
     const imagesFav = photosFav? JSON.parse(photosFav) : [];
-    const newImage = {id, urls: image.urls};
+    const category = image.exif?.[0] || 'default';
+
+    console.log(category);
+    const newImage = {id,
+      urls: image.urls,
+      category,};
     
 
     
@@ -25,6 +30,7 @@ export const ImagesComponent = (images) => {
       imagesFav.push(newImage)
       localStorage.setItem("fav",JSON.stringify(imagesFav))
     }
+    
   }
 
   const handleLike = (image) => {

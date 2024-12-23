@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet, useLocation } from "react-router-dom"
 import "./navbar.css"
 import "./header.css"
 import "./footer.css"
@@ -13,13 +13,23 @@ import { searchImagesThunk } from "../../features/images/imagesThunk";
 export const Layout = () => {
     const [searchTerm,setSearchTerm] = useState('')
     const dispatch = useDispatch();
+    const location = useLocation();
 
     const handleSearch = (e) => {
         e.preventDefault();
+
         if (searchTerm.trim()) {
-            dispatch(searchImagesThunk(searchTerm));  
+            
+            if (location.pathname === '/'){
+
+                dispatch(searchImagesThunk(searchTerm));
+            } else if (location.pathname === 'fav') {
+                dispatch(searchFavThunk(searchTerm))
+            }
         }
     };
+
+    
     
 
     return <>
@@ -40,12 +50,13 @@ export const Layout = () => {
                         type="text"
                         placeholder="Search Image"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value)}}
                     />
             <button  className="header__button"><CiSearch/></button>
             </form>
         </header>
-        <Outlet/> 
+        <Outlet searchTerm={searchTerm}/> 
         <footer className="footer">
             <h1 className="footer__title">SNAPFLOW</h1>
             <CiLinkedin className="footer__linkedin"/>
