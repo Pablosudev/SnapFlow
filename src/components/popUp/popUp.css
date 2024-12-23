@@ -51,7 +51,7 @@
 }
 .popUp__save{
     position: absolute;
-    bottom: 3dvh;
+    bottom: 3%;
     border-radius: 30%;
     border-color: transparent;
     padding-right: 0.9rem;
@@ -100,7 +100,7 @@
     }
     .popUp__image{
         position: absolute;
-        top: 10%;
+        top: 0%;
         left: 7%;
         max-width: 30rem;
         max-height: 25rem;

@@ -1,7 +1,5 @@
 
-.header{
-    height: 15.6rem;
-}
+
 .header__image{
     position: relative;
     width: 100%;
@@ -44,7 +42,7 @@
 @media screen and (min-width: 1000px){
 
     .header{
-        height: 60rem;
+        max-height: 60rem;
     }
     .header__title{
         top: 30%;

@@ -7,11 +7,11 @@
     padding-left: 1.5rem;
     padding-right: 1rem;
     position: relative;
-    background-color: rgba(115, 165, 173, 1);
 }
 .images__random{
     border-radius: 6%;
-    max-width: 20rem;
+    max-width: 100%;
+    
 }
 .buttonsImages{
     display: flex;
@@ -54,12 +54,16 @@
 .imagesBody{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-around;
     background-color:rgba(115, 165, 173, 1);
     position: relative;
     padding-top: 5rem;
 }
 .buttonsImages{
-    right: 8%;
+   right: 9%;
+}
+.images__random{
+    max-width: 20rem;
 }
 }
