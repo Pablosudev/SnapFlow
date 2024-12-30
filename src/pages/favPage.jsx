@@ -6,6 +6,9 @@ import { getImagesFavData, getImagesFavStatus } from "../features/favSlice";
 import PopUpButton from "../components/buttons/popUpButton";
 import PopUp from "../components/popUp/popUpComponent";
 import { searchFavThunk } from "../features/images/favThunk";
+import { Select } from "../components/buttons/select";
+
+
 
 export const FavPage = () => {
 
@@ -18,8 +21,9 @@ export const FavPage = () => {
 
     const dispatch = useDispatch()
     const [isLoading,setIsLoading] = useState(true)
-    const imagesFavData = useSelector(getImagesFavData)
     const imagesFavStatus = useSelector(getImagesFavStatus)
+    
+   
 
  useEffect(() => {
          if(imagesFavStatus === "idle" && imagesFav.length === 0){
@@ -34,8 +38,6 @@ export const FavPage = () => {
          }
     },[imagesFavStatus,dispatch, initialImagesFav]);
 
-
-
     const openPopUp = (image) => {
         setPopUp(true)
         setSelectedImage(image);
@@ -46,7 +48,6 @@ export const FavPage = () => {
         setSelectedImage(null);
     };
     
-   
     const handleDelete = (image) => {
         const updatedImages = imagesFav.filter((img) => img.id !== image.id);
         setImagesFav(updatedImages); 
@@ -60,21 +61,18 @@ export const FavPage = () => {
         link.click();
     };
     
-
     const saveLabel = (newLabel, imageId) => {
         const updatedImages = imagesFav.map((img) =>
-            img.id === imageId ? { ...img, label: newLabel } : img
-        );
+            img.id === imageId ? { ...img, label: newLabel } : img);
         setImagesFav(updatedImages); 
         localStorage.setItem("fav", JSON.stringify(updatedImages)); 
     };
 
-
-
+    
   
     return (
         <div className="imagesBody">
-            
+            <Select images={imagesFav} setImagesFav={setImagesFav}  className="favSelect"/>
             {imagesFav.length > 0 ? (
                 imagesFav.map((image, index) => (
                     <div key={index} className="images">
@@ -93,12 +91,12 @@ export const FavPage = () => {
             ) : (
                 <p>No images in favorites.</p> 
             )}
-
             <PopUp
                 open={popUp} close={closePopUp} saveLabel={saveLabel} imageUrl={selectedImage ? selectedImage.urls.small : ""} 
                 currentLabel={selectedImage ? selectedImage.label : ""}
                 imageId={selectedImage ? selectedImage.id : null}
             />
+            <h2>Add more images to your favorites list !</h2>
         </div>
     );
 };
