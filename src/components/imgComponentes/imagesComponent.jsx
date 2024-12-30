@@ -10,19 +10,25 @@ export const ImagesComponent = (images) => {
 
   const handleFavorite = (image) => {
 
-    const id = new Date().getTime()
+    const id = image.id
     const photosFav = localStorage.getItem("fav")
     const imagesFav = photosFav? JSON.parse(photosFav) : [];
     
-    
-    const newImage = {id,
+    const isImagesFav = imagesFav.some((img) => img.id === id);
+      
+      if (isImagesFav) {
+        alert ("This image is already in your favorites !");
+        return;
+      }
+
+    const newImage = {
+      id,
       urls: image.urls,
       width: image.width,
       height: image.height,
-      likes: localStorage.getItem("like"),
-      date: image.updated_at,};
+      date: image.updated_at,
+      likes: image.total_likes,};
       
-    
 
     
     if (photosFav ===null){

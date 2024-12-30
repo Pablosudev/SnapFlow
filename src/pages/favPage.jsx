@@ -72,7 +72,7 @@ export const FavPage = () => {
   
     return (
         <div className="imagesBody">
-            <Select images={imagesFav} setImagesFav={setImagesFav}  className="favSelect"/>
+            <Select images={imagesFav} setImagesFav={setImagesFav}/>
             {imagesFav.length > 0 ? (
                 imagesFav.map((image, index) => (
                     <div key={index} className="images">
@@ -96,7 +96,7 @@ export const FavPage = () => {
                 currentLabel={selectedImage ? selectedImage.label : ""}
                 imageId={selectedImage ? selectedImage.id : null}
             />
-            <h2>Add more images to your favorites list !</h2>
+            <h2 className="favText">Add more images to your favorites list !</h2>
         </div>
     );
 };

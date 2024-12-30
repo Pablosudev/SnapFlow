@@ -1,5 +1,7 @@
 
-
+.header{
+    max-height: 15rem;
+}
 .header__image{
     position: relative;
     width: 100%;

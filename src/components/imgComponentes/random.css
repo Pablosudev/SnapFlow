@@ -1,5 +1,10 @@
 
-
+.imagesBody{
+    background-color:rgba(115, 165, 173, 1);
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+}
 
 .images{
     padding-top: 1rem;
@@ -7,6 +12,7 @@
     padding-left: 1.5rem;
     padding-right: 1rem;
     position: relative;
+   
 }
 .images__random{
     border-radius: 6%;
@@ -48,6 +54,27 @@
     margin-bottom: 0.5rem;
     
 }
+.favSelect{
+    position: absolute;
+    top: 1.5%;
+    right: 28%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2.5rem;
+    font-family: "Inter";
+    z-index: 1;
+    background-color: rgba(217, 217, 217, 1);
+}
+.favText{
+    font-family: "Inter";
+    color: white;
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
+    
+}
 
 @media screen and (min-width: 1000px){
 
@@ -58,7 +85,8 @@
     justify-content: space-around;
     background-color:rgba(115, 165, 173, 1);
     position: relative;
-    padding-top: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
 }
 .buttonsImages{
    right: 9%;
@@ -68,7 +96,22 @@
 }
 .favSelect{
     position: absolute;
-    top: 1%;
-    right: 50%;
+    top: 7%;
+    right: 46%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2.5rem;
+    font-family: "Inter";
+    background-color: rgba(217, 217, 217, 1);
+}
+.favText{
+    font-family: "Inter";
+    color: white;
+    position: absolute;
+    bottom: 1%;
+
+    
 }
 }
