@@ -33,9 +33,7 @@ export const HomePage = () => {
             setIsLoading(false)
             alert ("Error")
          }
-
-
-    },[imagesData,imagesStatus,dispatch])
+      },[imagesData,imagesStatus,dispatch])
 
     return <>
     <div >

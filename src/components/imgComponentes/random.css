@@ -2,8 +2,7 @@
 .imagesBody{
     background-color:rgba(115, 165, 173, 1);
     position: relative;
-    padding-top: 5rem;
-    padding-bottom: 7rem;
+    padding-bottom: 9rem;
 }
 
 .images{
@@ -55,9 +54,8 @@
     
 }
 .favSelect{
-    position: absolute;
-    top: 1.5%;
-    right: 28%;
+    position: relative;
+    left: 29%;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     padding-left: 2rem;
@@ -66,6 +64,7 @@
     font-family: "Inter";
     z-index: 1;
     background-color: rgba(217, 217, 217, 1);
+    margin-top: 1.5rem;
 }
 .favText{
     font-family: "Inter";
@@ -85,8 +84,8 @@
     justify-content: space-around;
     background-color:rgba(115, 165, 173, 1);
     position: relative;
-    padding-top: 10rem;
     padding-bottom: 5rem;
+    padding-top: 7rem;
 }
 .buttonsImages{
    right: 9%;
@@ -96,8 +95,8 @@
 }
 .favSelect{
     position: absolute;
-    top: 7%;
-    right: 46%;
+    top: 1%;
+    left: 45%;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     padding-left: 2rem;

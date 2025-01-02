@@ -1,42 +1,23 @@
 import { RiDownload2Line } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getImagesFavData, getImagesFavStatus } from "../features/favSlice";
 import PopUpButton from "../components/buttons/popUpButton";
 import PopUp from "../components/popUp/popUpComponent";
-import { searchFavThunk } from "../features/images/favThunk";
 import { Select } from "../components/buttons/select";
+
 
 
 
 export const FavPage = () => {
 
-    const photosFav = localStorage.getItem("fav")
+    const photosFav = localStorage.getItem("fav");
     const initialImagesFav = photosFav ? JSON.parse(photosFav) : [];
-
     const [popUp, setPopUp] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [imagesFav, setImagesFav] = useState(initialImagesFav);
 
-    const dispatch = useDispatch()
-    const [isLoading,setIsLoading] = useState(true)
-    const imagesFavStatus = useSelector(getImagesFavStatus)
     
-   
 
- useEffect(() => {
-         if(imagesFavStatus === "idle" && imagesFav.length === 0){
-            dispatch(searchFavThunk(""))
-         }
-         else if (imagesFavStatus === "fulfilled"){
-            setIsLoading(false)
-         }
-         else if (imagesFavStatus === "rejected"){
-            setIsLoading(false)
-            alert ("Error")
-         }
-    },[imagesFavStatus,dispatch, initialImagesFav]);
 
     const openPopUp = (image) => {
         setPopUp(true)

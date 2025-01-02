@@ -12,6 +12,7 @@
     align-items: center;
     flex-direction: column;
     padding: 1rem;
+    z-index: 2;
 }
 .popUp__title{
     font-family: "Inter";
@@ -67,6 +68,7 @@
         top: 20%;
         width: 50%;
         height: 50%;
+        z-index: 2;
         
     }
     .popUp__title{

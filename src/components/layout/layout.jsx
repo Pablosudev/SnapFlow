@@ -9,6 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchImagesThunk } from "../../features/images/imagesThunk";
+import { searchFavThunk } from "../../features/images/favThunk";
 
 export const Layout = () => {
     const [searchTerm,setSearchTerm] = useState('')
@@ -23,7 +24,7 @@ export const Layout = () => {
             if (location.pathname === '/'){
 
                 dispatch(searchImagesThunk(searchTerm));
-            } else if (location.pathname === 'fav') {
+            } else if (location.pathname === '/fav') {
                 dispatch(searchFavThunk(searchTerm))
             }
         }

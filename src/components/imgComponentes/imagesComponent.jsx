@@ -24,10 +24,11 @@ export const ImagesComponent = (images) => {
     const newImage = {
       id,
       urls: image.urls,
+      label: image.description,
       width: image.width,
       height: image.height,
       date: image.updated_at,
-      likes: image.total_likes,};
+      likes: image.likes,};
       
 
     
@@ -58,7 +59,6 @@ export const ImagesComponent = (images) => {
     return <>
     <div className="imagesBody">
         {images.data.map((image, index) => {
-         
             return <div key={index}>
               <div className="images">
                     <img src={image.urls.small} className="images__random"/>
