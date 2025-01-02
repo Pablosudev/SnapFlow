@@ -35,22 +35,12 @@
     margin-bottom: 0.5rem;
     
 }
-.favButton{
+.favButton, .likeButton, .favButton{
     background-color:rgba(115, 165, 173, 1);
     border-radius: 15%;
     width: 2.5rem;
     height: 2.5rem;
     border: transparent;
-    
-}
-.buttonFavs{
-    background-color:rgba(115, 165, 173, 1);
-    border-radius: 15%;
-    width: 2.5rem;
-    height: 2.5rem;
-    border:transparent;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
     
 }
 .favSelect{
@@ -73,6 +63,22 @@
     bottom: 1%;
     text-align: center;
     
+}
+.buttonFavs {
+    background-color: rgba(115, 165, 173, 1); /* Color base del botón */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 15%;
+    width: 2.5rem;
+    height: 2.5rem;
+    border:transparent;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.buttonFavs:hover, .likeButton:hover, .favButton:hover {
+    background-color: #ddd; 
 }
 
 @media screen and (min-width: 1000px){
@@ -112,5 +118,15 @@
     bottom: 1%;
 
     
+}
+.buttonFavs, .likeButton, .favButton {
+    background-color: rgba(115, 165, 173, 1); 
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.buttonFavs:hover, .likeButton:hover, .favButton:hover {
+    background-color: #ddd; 
 }
 }

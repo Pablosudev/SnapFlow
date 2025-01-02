@@ -5,9 +5,6 @@ import { imagesThunk } from "../features/images/imagesThunk"
 import { ImagesComponent } from "../components/imgComponentes/imagesComponent"
 
 
-
-
-
 export const HomePage = () => {
 
    const [data,setData] = useState([])

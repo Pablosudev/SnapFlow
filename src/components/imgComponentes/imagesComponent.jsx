@@ -1,6 +1,7 @@
+import FavoriteButton from "../buttons/favoriteButton"
+import LikeButton from "../buttons/likeButton"
 import "./random.css"
-import { MdFavoriteBorder } from "react-icons/md";
-import { IoIosAddCircleOutline } from "react-icons/io";
+
 
 
 
@@ -63,12 +64,11 @@ export const ImagesComponent = (images) => {
               <div className="images">
                     <img src={image.urls.small} className="images__random"/>
                     <div className="buttonsImages">
-                    <button onClick={() => handleLike(image)} className="likeButton"><MdFavoriteBorder /></button>
-                    <button onClick={() => handleFavorite(image)} className="favButton"><IoIosAddCircleOutline /></button>
+                      <LikeButton image={image} handleLike={handleLike}/>
+                      <FavoriteButton image = {image} handleFavorite={handleFavorite}/>
                   </div>
               </div>
             </div>
-        
         })}
       </div>
         

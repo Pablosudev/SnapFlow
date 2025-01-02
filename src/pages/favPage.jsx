@@ -1,10 +1,10 @@
-import { RiDownload2Line } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PopUpButton from "../components/buttons/popUpButton";
 import PopUp from "../components/popUp/popUpComponent";
 import { Select } from "../components/buttons/select";
-
+import DownloadButton from "../components/buttons/downloadButton";
+import DeleteButton from "../components/buttons/deleteButton";
 
 
 
@@ -16,9 +16,6 @@ export const FavPage = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [imagesFav, setImagesFav] = useState(initialImagesFav);
 
-    
-
-
     const openPopUp = (image) => {
         setPopUp(true)
         setSelectedImage(image);
@@ -28,26 +25,20 @@ export const FavPage = () => {
         setPopUp(false);
         setSelectedImage(null);
     };
-    
-    const handleDelete = (image) => {
-        const updatedImages = imagesFav.filter((img) => img.id !== image.id);
-        setImagesFav(updatedImages); 
-        localStorage.setItem("fav", JSON.stringify(updatedImages)); 
-    };
 
-    const handleDownload = (image) => {
-        const link = document.createElement('a');
-        link.href = image.urls.full;
-        link.download = `image-${image.id}.jpg`;
-        link.click();
-    };
-    
     const saveLabel = (newLabel, imageId) => {
         const updatedImages = imagesFav.map((img) =>
             img.id === imageId ? { ...img, label: newLabel } : img);
         setImagesFav(updatedImages); 
         localStorage.setItem("fav", JSON.stringify(updatedImages)); 
     };
+
+    const handleDelete = (image) => {
+        const deleteImage = imagesFav.filter((img) => img.id !== image.id);
+        setImagesFav(deleteImage);
+        localStorage.setItem("fav", JSON.stringify(deleteImage));
+
+    }
 
     
   
@@ -59,13 +50,9 @@ export const FavPage = () => {
                     <div key={index} className="images">
                         <img src={image.urls.small} className="images__random" alt={image.alt_description} />
                         <div className="buttonsImages">
-                            <button onClick={() => handleDownload(image)} className="buttonFavs">
-                                <RiDownload2Line />
-                            </button>
+                            <DownloadButton image = {image}/>
                             <PopUpButton openPopUp={() => openPopUp(image)} />
-                            <button onClick={() => handleDelete(image)} className="buttonFavs">
-                                <RiDeleteBin6Line />
-                            </button>
+                            <DeleteButton image = {image} handleDelete={handleDelete}/>
                         </div>
                     </div>
                 ))
