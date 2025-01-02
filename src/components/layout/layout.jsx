@@ -22,7 +22,6 @@ export const Layout = () => {
         if (searchTerm.trim()) {
             
             if (location.pathname === '/'){
-
                 dispatch(searchImagesThunk(searchTerm));
             } else if (location.pathname === '/fav') {
                 dispatch(searchFavThunk(searchTerm))
@@ -50,7 +49,7 @@ export const Layout = () => {
                     <input
                         className="header__search"
                         type="text"
-                        placeholder="Search Image"
+                        placeholder="Find your perfect image"
                         value={searchTerm}
                         onChange={(e) => {
                             setSearchTerm(e.target.value)}}

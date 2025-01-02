@@ -3,9 +3,6 @@ import LikeButton from "../buttons/likeButton"
 import "./random.css"
 
 
-
-
-
 export const ImagesComponent = (images) => {
 
 

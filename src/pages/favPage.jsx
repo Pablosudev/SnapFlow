@@ -66,5 +66,4 @@ export const FavPage = () => {
             />
             <h2 className="favText">Add more images to your favorites list !</h2>
         </div>
-    );
-};
+    )};

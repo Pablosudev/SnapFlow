@@ -19,13 +19,19 @@
     margin-top: 1rem;
     color: white;
     font-family: "Inter";
+    
 }
 .navBar__fav{
     margin-right: 0.5rem;
     color: white;
     font-family: "Inter";
 }
-
+.navBar__home:hover, .navBar__fav:hover {
+    color: #9ba29d;  
+}
+.navBar__home.active, .navBar__fav.active {
+    color: #1992ad; 
+}
 @media screen and (min-width: 1000px){
 
 
@@ -38,6 +44,12 @@
     margin-right: 2rem;
     color: white;
     font-family: "Inter";
+}
+.navBar__home:hover, .navBar__fav:hover {
+    color: #9ba29d;  
+}
+.navBar__home.active, .navBar__fav.active {
+    color: #1992ad; 
 }
 
 }

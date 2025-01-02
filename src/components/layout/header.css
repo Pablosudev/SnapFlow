@@ -48,21 +48,24 @@
     }
     .header__title{
         top: 30%;
-        left: 38%;
+        left: 37%;
         font-size: 3rem;
     }
     .header__search{
         top : 80%;
         left: 36%;
-        padding-left: 2rem;
-        padding-right: 18rem;
-        padding-bottom: 0.8rem;
-        padding-top: 0.8rem;
+        padding-left: 4%;
+        padding-right: 11%;
+        padding-bottom: 0.8%;
+        padding-top:0.8%;
     }
     .header__button{
-        top: 79.9%;
-        right: 35%;
-        padding: 0.7rem;
+        top: 80%;
+        right: 33%;
+        padding-top: 0.7%;
+        padding-bottom: 0.7%;
+        padding-left:0.8% ;
+        padding-right:0.8% ;
     }
     .header__text{
         top:50%;
