@@ -4,10 +4,12 @@ export const Select = ({ images, setImagesFav }) => {
   const [sortBy, setSortBy] = useState(""); 
   
   const sortImages = (images, criteria) => {
+
     let sortedArray = [...images];
     switch (criteria) {
       case "height":
         sortedArray.sort((a, b) => a.height - b.height); 
+        break;
       case "width":
         sortedArray.sort((a, b) => a.width - b.width); 
         break;

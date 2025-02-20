@@ -1,4 +1,3 @@
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { useState } from "react";
 import PopUpButton from "../components/buttons/popUpButton";
 import PopUp from "../components/popUp/popUpComponent";
